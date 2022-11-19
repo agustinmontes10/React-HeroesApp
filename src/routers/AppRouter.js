@@ -1,31 +1,25 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter} from "react-router-dom";
-
-import { LoginScreen } from '../components/login/LoginScreen';
+import { DcScreen } from '../components/dc/DcScreen';
+import { HeroScreen } from '../components/hero/HeroScreen';
+import { MarvelScreen } from '../components/marvel/MarvelScreen';
+import { SearchScreen } from '../components/search/SearchScreen';
 import { Navbar } from '../components/ui/Navbar';
-import { DashboardRoutes } from './DashboardRoutes';
-import { PrivateRoute } from './PrivateRoute';
-import { PublicRoute } from './PublicRoute';
+
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
         
+      <Navbar />
+
       <Routes>
-        <Route path='login' element={
-            <PublicRoute>
-                <LoginScreen />
-            </PublicRoute>}
-        />
-
-        {/*<Route path="/login" element={<LoginScreen />} />*/}
-
-        <Route path='/*'  element={
-            <PrivateRoute>
-                <DashboardRoutes />
-            </PrivateRoute>} 
-        />
-
+        <Route path="/" element={<MarvelScreen />} />
+        <Route path="marvel" element={<MarvelScreen />} />
+        <Route path="dc" element={<DcScreen />} />
+        <Route path="search" element={<SearchScreen />} />
+        <Route path="hero/:heroId" element={<HeroScreen />} />
+        <Route path="/*" element={<MarvelScreen />} />
         {/*<Route path='/*'  element={ <DashboardRoutes /> }/> */}
         
       </Routes>

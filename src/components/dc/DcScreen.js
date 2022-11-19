@@ -3,8 +3,8 @@ import { HeroList } from '../hero/HeroList'
 
 export const DcScreen = () => {
   return (
-    <div>
-        <h1>DCScreen</h1>
+    <div className='container mt-5'>
+        <h1 className='animate__animated animate__fadeInLeft'>DCScreen</h1>
         <hr/>
 
         <HeroList publisher={'DC Comics'}/>

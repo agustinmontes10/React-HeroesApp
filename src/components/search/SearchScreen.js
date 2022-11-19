@@ -25,11 +25,11 @@ export const SearchScreen = () => {
   }
 
   return (
-    <>
-        <h1>Search</h1>
+    <div className='container mt-5'>
+        <h1 className='animate__animated animate__fadeInLeft'>Search</h1>
         <hr />
 
-        <div className='row'>
+        <div className='row animate__animated animate__fadeInUp'>
 
             <div className='col-5'>
                 <h4>Search</h4>
@@ -56,6 +56,10 @@ export const SearchScreen = () => {
                 <h4>Resultados</h4>
                 <hr />
 
+                <div class="spinner-border d-none" id='loading' style={{position:'relative', left:'45%', top: '10%'}} role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+
                 {
                   (q === '')
                     ? <div className='alert alert-info'>Buscar un heroe</div>
@@ -75,6 +79,6 @@ export const SearchScreen = () => {
             </div>
 
         </div>
-    </>
+    </div>
   )
 }
